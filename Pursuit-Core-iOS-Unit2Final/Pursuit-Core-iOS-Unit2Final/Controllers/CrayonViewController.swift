@@ -10,7 +10,9 @@ import UIKit
 
 class CrayonViewController: UIViewController {
 private var crayons = Crayon.allTheCrayons
-   
+    
+    
+    
     @IBOutlet weak var myTableView: UITableView!
     
   override func viewDidLoad() {
@@ -25,6 +27,7 @@ private var crayons = Crayon.allTheCrayons
         let currentCrayon = crayons[indexPath.row]
         crayonsDVC.crayon = currentCrayon
         
+        
   }
 
 
@@ -38,7 +41,7 @@ extension CrayonViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let crayon = crayons[indexPath.row]
-        let cellColor = UIColor.init(displayP3Red: CGFloat(crayon.red), green: CGFloat(crayon.green), blue: CGFloat(crayon.blue), alpha: 1.0)
+        let cellColor = UIColor.init(displayP3Red: CGFloat(), green: CGFloat(), blue: CGFloat(), alpha: 1.0)
         guard let cell = myTableView.dequeueReusableCell(withIdentifier: ("crayonCell"), for: indexPath) as? UITableViewCell else { return UITableViewCell()}
         cell.textLabel?.text = crayon.name
         cell.detailTextLabel?.text = crayon.hex
